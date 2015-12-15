@@ -105,3 +105,26 @@ The the server is simple: it generates random points near a line. This will simu
 
 It does a simple linear regression on the data and store the slope (which the Wikipedia page calls α̂ ) and intercept (β̂ ) of the values. https://en.wikipedia.org/wiki/Simple_linear_regression
 
+
+movie_recomendations.py
+
+Recommended movies using Spark MLlib Collaborative Filtering. To register the user-entered titles with Tweetings, use the Tweetings title with the smallest Levenshtein distance from the user's entry. There is a Levenshtein implementation in pyspark.sql
+
+Sample user's ratings:
+
+10 The Lord of the Rings: The Return of the King
+
+8 The Lord of the Rings: The Fellowship of the Ring (2001)
+
+5 orrest Gump (1994)
+
+9 Mad Max: Fury Road (2014)
+
+3 Mad Max (1979)
+
+The dataset is from here: https://github.com/sidooms/MovieTweetings
+
+
+euler.py
+
+This file does the same work as what I did in Hadoop-MapReduce folder, EvaluateEuler.java, but instead of using java MapReduce, it is using python sql.
