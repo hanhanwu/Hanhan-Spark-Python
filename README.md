@@ -31,3 +31,77 @@ This file does the similar work as relative-scire.py, but deals with huge data i
 
 To calculate the relative score, we map over the comments: write a function that takes the broadcast variable and comment as arguments, and returns the relative average as before. This technique is a broadcast join.
 
+
+ reddit_average_sql.py
+ 
+ This file does the same work like RedditAverage.java in my Hadoop-MapReduce folder but instead of using java, it is using Spark SQL.
+ 
+ 
+ load_logs_sql.py
+ 
+ This file does the same work as LoadLogs.java in my Hadoop-MapReduce folder but instead of using java, it is using Spark SQL.
+ 
+ temp_range.py, temp_range_sql.py
+ 
+ These 2 files look at look at historical weather data from the Global Historical Climatology Network. Their archives contain (among other things) lists of weather observations from various weather stations formatted as CSV files like this:
+
+USC00242347,20120105,TMAX,133,,I,K,0800
+
+USC00242347,20120105,TMIN,-56,,,K,0800
+
+USC00242347,20120105,TOBS,-56,,,K,0800
+
+US1SCPC0003,20120105,PRCP,0,,,N,
+
+US1SCPC0003,20120105,SNOW,0,,,N,
+
+NOE00133566,20120105,TMAX,28,,,E,
+
+NOE00133566,20120105,TMIN,-26,,,E,
+
+NOE00133566,20120105,PRCP,57,,,E,
+
+NOE00133566,20120105,SNWD,0,,,E,
+
+The fields are the weather station; the date (Jan 5 2012 in these lines); the observation (min/max temperature, amount of precipitation, etc); the value (and integer); and four more columns we won't use. The readme file in the archive explains the fields in detail. We will worry about the min and max temperature (TMIN, TMAX) which are given as °C × 10.
+
+The problem they are trying to solve is: what weather station had the largest temperature difference on each day? That is, where was the largest difference between TMAX and TMIN?
+
+temp_range.py is using Spark core python while temp_range_sql.py is using Spark sql.
+
+ 
+ shortest_path.py
+ 
+ This file is using Spark Sql to calculate Dijkstra's algorithm - Shortest Path.
+ 
+The data input will represent the graph by listing the outgoing edges of each node (and all of our nodes will be labelled with integers):
+
+1: 3 5
+
+2: 4
+
+3: 2 5
+
+4: 3
+
+5:
+
+6: 1 5
+ 
+ 
+read_stream.py
+
+This file work with Spark Streaming to process a constant stream of data in real(-ish) time.
+
+In order to produce some streaming data, I have set up a simple TCP server on cmpt732.csil.sfu.ca that returns (x,y) points as plain text lines like this:
+
+103.492239 100.839233
+
+883.152476 878.051790
+
+-331.287403 -333.856794
+
+The the server is simple: it generates random points near a line. This will simulate a stream of sensor data.
+
+It does a simple linear regression on the data and store the slope (which the Wikipedia page calls α̂ ) and intercept (β̂ ) of the values. https://en.wikipedia.org/wiki/Simple_linear_regression
+
