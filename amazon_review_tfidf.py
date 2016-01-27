@@ -43,7 +43,7 @@ def get_tfidf_features(txt):
 def get_output(in_data):
     text = sc.textFile(in_data)
 
-    nltk_data_path = "/Users/hanhanw/Desktop/nltk_data"  # chnage this t your nltk_data location
+    nltk_data_path = "[your nltk data]"  # chnage this t your nltk_data location
     nltk.data.path.append(nltk_data_path)
     stop_words = set(stopwords.words("english"))
 
