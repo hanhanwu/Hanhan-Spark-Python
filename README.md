@@ -144,9 +144,14 @@ Spark MLlib and Spark ML
 
 3. spark_ml_pipline.py
  * The code in this python file is to get to know Spark machine learning pipeline.
- * Using cross validation to tune parameters, getting the best prediction model
+ * Using cross validation to tune parameters, getting the best prediction model.
  
 Sentiment Analysis
 1. amazon_review_tfidf.py, amazon_review_tfidf_normalized.py
- * Get bag of words and using tfidf scores as the feature vector
- * amazon_review_tfidf_normalized.py added normalizer
+ * Get bag of words and using tfidf scores as the feature vector.
+ * amazon_review_tfidf_normalized.py added normalizer.
+
+2. tfidf_cv_lowestRMSE.py, tfidf_cv_lowestRMSE_normalized.py
+ * The input is the output from amazon_review_tfidf.py, amazon_review_tfidf_normalized.py.
+ * Using cross validation, linear regression model to get the lowest RMSE and the relative step size.
+ * For tfidf_cv_lowestRMSE_normalized.py, it is using L2 as the regularization type.
