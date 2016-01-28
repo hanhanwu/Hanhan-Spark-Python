@@ -155,3 +155,8 @@ Sentiment Analysis
  * The input is the output from amazon_review_tfidf.py, amazon_review_tfidf_normalized.py.
  * Using cross validation, linear regression model to get the lowest RMSE and the relative step size.
  * For tfidf_cv_lowestRMSE_normalized.py, it is using L2 as the regularization type.
+
+3. word2vec.py, word2vec_kmeans.py, word2vec_best_RMSE.py
+ * Instead of using tfidf to generate feature vectors for linear regression model, we can use Word vector. word2vec.py shows how to generate the model.
+ * After generating the word2vec model, I am using kmeans to generate the clusters for the data. Check word2vec_kmeans.py.
+ * word2vec_best_RMSE.py is using word2vec generated feature vectors and linear regression model to get the best RMSE. Here I am not doing cross validation, since the code takes very long time, in order to avoid overfitting, it is becessary to do cross validation.
