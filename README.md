@@ -166,3 +166,12 @@ Sentiment Analysis
    * Each review has 1 histogram, and for this histogram, it is list with 2000 elements. The elements all started from 0, each element represent the count for each cluster. For example, if a word belongs to cluster 0, the first element in the list will add 1.
    * Normalize the histogram: calcuate the sum of 2000 element counts, and then each element count is divided by the sum.
    * Finally return the histogram for each review as a SparseVector.
+   * 
+   
+4. GradientBoostedTrees.py, RandomForests.py
+ * Instead of using linear regression model, the code is trying to use Greadient Boosted Trees and Random Forests to do the prediction. The average RMSE is much lower than the experiments in previous code. But in practical, need to add cross validation in the code here.
+
+5. Different approached to improve the sentiment analysis model:
+ * Different features: We could try different encoding techniques instead of bag-of-words. For example, VLAD 2 or Fisher encoding 3 or a concatenation of TF-IDF with word2vec features.
+ * Different models: We could use different regression models sich as a random forest regression model.
+ * Exploring model parameters: We saw that the size of word2vec features can affect its accuracy at the cost of a longer training time.
