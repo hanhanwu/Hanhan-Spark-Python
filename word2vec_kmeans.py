@@ -37,7 +37,7 @@ def generate_kmeans_model(rdd, k):
 def main():
     text = sc.textFile(inputs)
 
-    nltk_data_path = "/Users/hanhanw/Desktop/nltk_data"  # maybe changed to the sfu server path
+    nltk_data_path = "[cahnge to your own nltk_data location]"  # maybe changed to the sfu server path
     nltk.data.path.append(nltk_data_path)
 
     cleaned_review = text.map(clean_review)
