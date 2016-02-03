@@ -194,3 +194,7 @@ There are 3 popular ways to do numerical feature rescaling:
  * Scaling to unit length: y = x/||x||
  * At a high level, Rescaling and Standardization are doing column-wise scaling (i.e., taking a column as input and output scaled column); the normalization is doing row-wise scaling (i.e., taking a row as input and output scaled row). To decide which one to use, it really depends on your data. For example, if you have a feature vector for a person: (140lb, 1.80m, 29 years old). It would be better to do column-wise scaling first and then do row-wise scaling since features are in different metrics. But for the feature vector of bag-of-words, only doing row-wise scaling should be enough.
  * In Spark, StandardScalar is to avoid results to be dominated by some features. For example, in KMeans, if you don't do feature scaling, the final distance will be dominated by those features whose range of values are very large. Regularization is to avoid model overfitting. It adds model complexity into the objective function of linear regression.
+
+3. streaming_anomalies_detection.py
+ * This code is for real time anomalies detection, since Spark has not released streaming DataFrame, I have spent lots of time to convert the DStream into DataFrame so that the later operations should be easier, but so far, still didn't get the expected results. (In developing....)
+
