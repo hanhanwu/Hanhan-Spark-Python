@@ -175,3 +175,22 @@ Sentiment Analysis
  * Different features: We could try different encoding techniques instead of bag-of-words. For example, VLAD 2 or Fisher encoding 3 or a concatenation of TF-IDF with word2vec features.
  * Different models: We could use different regression models sich as a random forest regression model.
  * Exploring model parameters: We saw that the size of word2vec features can affect its accuracy at the cost of a longer training time.
+
+
+Anomalies Detection
+1. anomalies_detection_data_sample.txt
+ * This this the input data sample. The real data input is in parquet format so that it can be changed into DataFrame once we have read the data.
+
+2. anomalies_detection.py
+ * In the code, I didn't use RDD in cat2Num() and addScore() since the transformation between RDD and DataFrame in Spark is expensive. With DataFrame udf and withColumn(), we can do many operations in a convenient way.
+ * As your can see in the data input, each row is a feature vector, the first 2 columns are not numerical data, we need to change the 2 columns into one-hot key representation. one-hot is using 1 to represent the distance between each 2 value pair.
+ * After we have trained the data into clusters by using kMeans, we need to calculate confidence score, score = (N_max - N_x)/(N_max - N_min). N_max and N_min are the sizes of the largest and the smallest clusters, while N_x represent each cluster's size.
+ * Finally we filter put those points have confidence scores higher than the threshold, they will be the anomalies.
+ Note:
+ * Here the formular I calculate the confidence score looks quite similar to the way I did normalization, in my machine learning projects. But they are 2 things.
+There are 3 popular ways to do numerical feature rescaling:
+ * Rescaling: y = (x-min(x))/(max(x)-min(x))
+ * Standardization: y = (x-avg(x))/delta
+ * Scaling to unit length: y = x/||x||
+ * At a high level, Rescaling and Standardization are doing column-wise scaling (i.e., taking a column as input and output scaled column); the normalization is doing row-wise scaling (i.e., taking a row as input and output scaled row). To decide which one to use, it really depends on your data. For example, if you have a feature vector for a person: (140lb, 1.80m, 29 years old). It would be better to do column-wise scaling first and then do row-wise scaling since features are in different metrics. But for the feature vector of bag-of-words, only doing row-wise scaling should be enough.
+ * In Spark, StandardScalar is to avoid results to be dominated by some features. For example, in KMeans, if you don't do feature scaling, the final distance will be dominated by those features whose range of values are very large. Regularization is to avoid model overfitting. It adds model complexity into the objective function of linear regression.
