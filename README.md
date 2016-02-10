@@ -198,3 +198,11 @@ There are 3 popular ways to do numerical feature rescaling:
 3. streaming_anomalies_detection.py
  * This code is for real time anomalies detection, since Spark has not released streaming DataFrame, I have spent lots of time to convert the DStream into DataFrame so that the later operations should be easier, but so far, still didn't get the expected results. (In developing....)
 
+
+Data Cleaning - Entity Resolution
+
+* Some Papers recommended by my professor:
+ 1. Efficient similarity search and similarity query: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.357.2270&rep=rep1&type=pdf
+
+
+
