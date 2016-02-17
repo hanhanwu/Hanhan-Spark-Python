@@ -204,5 +204,13 @@ Data Cleaning - Entity Resolution
 * Some Papers recommended by my professor:
  1. Efficient similarity search and similarity query: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.357.2270&rep=rep1&type=pdf
 
-
+* entity_resolution.py
+ 1. ER is defined as finding different records that refer to the same real-world entity, e.g., iPhone 4-th generation vs. iPhone four. It is central to data integration and cleaning. In this assignment, you will learn how to apply ER in a data integration setting. But the program that you are going to write can be easily extended to a data-cleaning setting, being used to detect duplication values
+ 2. I'm using Jaccard Similarity to calculate the similarities, and using Inverted Index for the join here has significantly improved the efficiency.
+ 3. By joining the 2 Inverted Index here, we assumed that similar items should share at least 1 word (non-stopword) in their names.
+ 4. Implementation Details:
+  * each item has an id, and split each of their names into a a list of string, remove the stop words, the rest of the words will be used as the joinKey for this item.
+  * By using flatMap() method, the (id, joinKey) pair will be change to a list of (token, id) pairs, and this list is the Inverted Index! Join the 2 lists of Inverted Interd, remove the duplicates. And by selecting the ids in both lists from the joined result, those origional joinKeys which do not share even a single word will be automatically removed.
+  * After using Inverted Index to do the initial filtering, now we need to use Jaccard Similarity to do further filtering. Item pairs which pass the threshold will remain. When using Jaccard Similarity here, I had to make sure the lists used in the formula all only contain distinct tokens, otherwise the result cannot be accurate.
+  * Finally, I am uising precision, recall and fmeasure to measure the accuracy with the ground truth.
 
