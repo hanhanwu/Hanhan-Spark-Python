@@ -214,3 +214,18 @@ Data Cleaning - Entity Resolution
   * After using Inverted Index to do the initial filtering, now we need to use Jaccard Similarity to do further filtering. Item pairs which pass the threshold will remain. When using Jaccard Similarity here, I had to make sure the lists used in the formula all only contain distinct tokens, otherwise the result cannot be accurate.
   * Finally, I am uising precision, recall and fmeasure to measure the accuracy with the ground truth.
 
+
+Movie Recommendation
+
+* The dataset is from MovieLens 100K data, the training data combined its all training data, and the testing data combined its all testing data.
+
+* There are several popular operations in movie recommendations: problem formulation, content-based filtering, collaborative filtering (memory-based, model-based), rating data
+
+1. als.py
+  * This model can be found in Spark mllib. It is a model-based model in collaborative filtering.
+
+2. slope_one.py
+  * This model is a memory-based model in collaborative filtering.
+  * I implemented its logic in the code. And you will find using DataFrame is far more better than using rdd in this case.
+  * Firstly, using the training data to calculate the deviation between each movie pairs. dev(j,i) = sum(r_j-r_i)/c(j,i),   [Here, j, i are movie ids, r_j, r_i are ratings provided by a user for both jth and ith movie, c(j,i) if the size of a set of users that rated both movies].
+  * Secondly, calculate how likely a user in the testing set will like a movie. This value P(a,j) is in range [1,5], so when we are comparing this value of the ground truth, no need to do more works. P(a,j) = sum((dev(j,i)+r(a,i))*c(j,i))/sum(c(j,i)),  [Here, dev, r, c all come from the training data results. jth movie here has not been rated by user a in the training data].
