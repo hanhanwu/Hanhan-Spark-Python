@@ -229,3 +229,12 @@ Movie Recommendation
   * I implemented its logic in the code. And you will find using DataFrame is far more better than using rdd in this case.
   * Firstly, using the training data to calculate the deviation between each movie pairs. dev(j,i) = sum(r_j-r_i)/c(j,i),   [Here, j, i are movie ids, r_j, r_i are ratings provided by a user for both jth and ith movie, c(j,i) if the size of a set of users that rated both movies].
   * Secondly, calculate how likely a user in the testing set will like a movie. This value P(a,j) is in range [1,5], so when we are comparing this value of the ground truth, no need to do more works. P(a,j) = sum((dev(j,i)+r(a,i))*c(j,i))/sum(c(j,i)),  [Here, dev, r, c all come from the training data results. jth movie here has not been rated by user a in the training data].
+
+3. More notes about Collaborative Filtering and Building Recommendation System (using movie recommendatio as an example)
+  * Problem formaulation: build a nested dictionary first, if the key if a user, then the value of each key is the products rated by the user; if the key is a product, then the value for each key is a list of user who have rated this product.
+  * Content-based filtering has more drawbacks than collaborative filtering (otherwise why do we use collaborative filtering more often). The major drawback is difficult to get clean feature vectors, such as it is not clear what the features should be, or it is expensive to create the vectors, or it does not scale well with the number of movies.
+  * Collaborative Filtering - Memory-based, Model-based
+  * Momory-based majorly using Item-based, User-based and Slope One. They can be used to learn similarity betweeen uers and predict unknown rating/find similar users; learn the similary between all items and do prediction/recommendation.
+  * Compare item-based and user-based, we always have much more users than the amount of products, so item-based similarity is less expensive to compute and store.
+  * But both item-based and user-based methods are heavily depend on the similarity measure, in order to solve this problem, we can use Slope One, since it computes deviations between item pairs. But it still suffers from data sparsity.
+  * Model-based - ALS (Alternative Least Squares), learn models for users and items.
