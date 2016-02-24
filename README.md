@@ -237,4 +237,4 @@ Movie Recommendation
   * Momory-based majorly using Item-based, User-based and Slope One. They can be used to learn similarity betweeen uers and predict unknown rating/find similar users; learn the similary between all items and do prediction/recommendation.
   * Compare item-based and user-based, we always have much more users than the amount of products, so item-based similarity is less expensive to compute and store.
   * But both item-based and user-based methods are heavily depend on the similarity measure, in order to solve this problem, we can use Slope One, since it computes deviations between item pairs. But it still suffers from data sparsity.
-  * Model-based - ALS (Alternative Least Squares), learn models for users and items.
+  * Model-based - ALS (Alternative Least Squares), learn models for users and items. it is trying to minimize P*Transpose(Q)-R, P=user feature matrix, Q=item feature matrix, R=rating matrix. It is similar to linear regression, but both P, Q are unknown.
