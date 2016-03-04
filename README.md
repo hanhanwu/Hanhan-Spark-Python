@@ -238,3 +238,11 @@ Movie Recommendation
   * Compare item-based and user-based, we always have much more users than the amount of products, so item-based similarity is less expensive to compute and store.
   * But both item-based and user-based methods are heavily depend on the similarity measure, in order to solve this problem, we can use Slope One, since it computes deviations between item pairs. But it still suffers from data sparsity.
   * Model-based - ALS (Alternative Least Squares), learn models for users and items. it is trying to minimize P*Transpose(Q)-R, P=user feature matrix, Q=item feature matrix, R=rating matrix. It is similar to linear regression, but both P, Q are unknown.
+ 
+
+SVM
+
+1. linear_svm.py, kernelized_svm.py, random_forest_with_bagging.py
+  * The data is from Kaggle Competition, Forest-Cover-Type-Prediction.
+  * I am using linear svm, kernelized svm and random forest with bagging as its sample selection method.
+  Note: During the experiments, the kernelized svm took very long time when I was changing different parameters to work on the same data sets.
