@@ -246,3 +246,15 @@ SVM
   * The data is from Kaggle Competition, Forest-Cover-Type-Prediction.
   * I am using linear svm, kernelized svm and random forest with bagging as its sample selection method.
   Note: During the experiments, the kernelized svm took very long time when I was changing different parameters to work on the same data sets.
+
+
+Deep Learning
+
+* Using Caffe for deep learning
+* Using Spark to distribute the work on multi-core.
+1. image_classification.py
+  * The training data came form Caffe example images, then classify the new images using other dataset.
+2. model_visualization.py
+  * visualize neural network models in each deep learning layer.
+
+
