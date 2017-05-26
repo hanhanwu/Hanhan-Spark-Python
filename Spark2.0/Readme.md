@@ -1,0 +1,1 @@
+I was using Spark 1.5. Spark 2.0 has make many changes and in fact it should be easier to use and faster for big data operations. Here, I'm creating a new folder, recording my Spark 2.0 practicing experience
