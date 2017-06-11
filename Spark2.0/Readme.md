@@ -17,17 +17,25 @@ INSTALL & RUN SPARK 2.0
 
 **************************************************************************
 
-Anomalies Detection
+Anomalies Detection (offline vs Streaming)
 
 * I'm planning to test Spark2.0 streaming, to see whether it can make real time data analysis, and hope to find a way to check model quality
-* Anomalies detection, without streaming
+* Anomalies detection, OFFLINE (without streaming)
   * [Data Sample][4]
   * [Spark 2.0 Anomalies Detection code][5]
     * Compared with Spark1.5, one of the major changes is, `SqlContext` has been replaced with `SparkSession`, in the code we call it as `spark`. Meanwhile, `spark context` can be got from `spark.sparkContext`. If I didn't remember wrong, the reason they made this change is to make calling spark sql easier. You can simple use created `spark` to do many things that originally needed more libraries
 
 * Anomalies detection, with streaming
+  * When it comes to real time detection experiments, I am planning to try 3 methods
+    * [Spark Streaming][6] - Apply Spark streaming machine learning methods on streaming data
+    * [Structured Streaming][7] - This one is still in Alpha Experimental stage, they are trying to allow you use streaming just like offline spark code
+    * Offline trained model for online data - If your coming data do not have significant changes, then train your model with historical data offline, and apply this model on online data, but need to check your model quality periodically, to make sure it still works fine
+    
+  * Experiment 1 - Spark Streaming
+    * [Spark streaming k-means][8]
 
-<b>TO BE CONTINUED</b>
+
+<b>TO BE CONTINUED...</b>
 
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
@@ -35,3 +43,6 @@ Anomalies Detection
 [3]:https://spark.apache.org/downloads.html
 [4]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/logs-features-sample.zip
 [5]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/anomalies_detection.py
+[6]:https://spark.apache.org/docs/2.1.0/streaming-programming-guide.html#overview
+[7]:https://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html
+[8]:http://spark.apache.org/docs/latest/mllib-clustering.html#streaming-k-means
