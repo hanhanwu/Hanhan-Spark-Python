@@ -1,1 +1,37 @@
-I was using Spark 1.5. Spark 2.0 has make many changes and in fact it should be easier to use and faster for big data operations. Here, I'm creating a new folder, recording my Spark 2.0 practicing experience
+I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should be easier to use and faster for big data operations. Here, I'm creating this new folder, recording my Spark 2.0 practicing experience
+
+**************************************************************************
+
+INSTALL & RUN SPARK 2.0
+
+* If you want to install/run it in different situations, such as in your local machine, Hadoop VMs, Cluster, etc. Check [this SFU CS Big Data Guidance][1]
+* To add Spark in IDE (I'm using MAC)
+  1. I'm using [PyCharm][2], it is great
+  2. [Download Spark][3], at the time I'm wrinting this guidance, I am using `spark-2.1.1-bin-hadoop2.7`
+  3. Open your PyCharm, create a new project. Open PyCharm Preference, and find `Project Structure`. Click `Add Content Root`, and find the path to `[your spark download folder]/spark-2.1.1-bin-hadoop2.7/python/lib`, add `py4j-0.10.4-src.zip`, `pyspark.zip`. Then you should be able to use Spark in your PyCharm
+* To run your .py file that's using Spark
+  * Even if you have Spark in IDE, still need to run it through terminal. So, open your terminal
+  * Type `export SPARK_HOME=[your spark download folder path]/spark-2.1.1-bin-hadoop2.7`
+  * Type `${SPARK_HOME}/bin/spark-submit --master local [your python file].py [input file 1]`, input file is optional, all depends on how you are going to read the data input in your code. And you can set multiple input files
+
+
+**************************************************************************
+
+Anomalies Detection
+
+* I'm planning to test Spark2.0 streaming, to see whether it can make real time data analysis, and hope to find a way to check model quality
+* Anomalies detection, without streaming
+  * [Data Sample][4]
+  * [Spark 2.0 Anomalies Detection code][5]
+    * Compared with Spark1.5, one of the major changes is, `SqlContext` has been replaced with `SparkSession`, in the code we call it as `spark`. Meanwhile, `spark context` can be got from `spark.sparkContext`. If I didn't remember wrong, the reason they made this change is to make calling spark sql easier. You can simple use created `spark` to do many things that originally needed more libraries
+
+* Anomalies detection, with streaming
+
+<b>TO BE CONTINUED</b>
+
+
+[1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
+[2]:https://www.jetbrains.com/pycharm/download/#section=mac
+[3]:https://spark.apache.org/downloads.html
+[4]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/logs-features-sample.zip
+[5]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/anomalies_detection.py
