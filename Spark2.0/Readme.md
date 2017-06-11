@@ -21,7 +21,8 @@ Anomalies Detection (offline vs Streaming)
 
 * I'm planning to test Spark2.0 streaming, to see whether it can make real time data analysis, and hope to find a way to check model quality
 * Anomalies detection, OFFLINE (without streaming)
-  * [Data Sample][4]
+  * [Data Sample - parquet files][4]
+  * [What does sample data look like][9], since you cannot read parquet directly
   * [Spark 2.0 Anomalies Detection code][5]
     * Compared with Spark1.5, one of the major changes is, `SqlContext` has been replaced with `SparkSession`, in the code we call it as `spark`. Meanwhile, `spark context` can be got from `spark.sparkContext`. If I didn't remember wrong, the reason they made this change is to make calling spark sql easier. You can simple use created `spark` to do many things that originally needed more libraries
 
@@ -32,7 +33,8 @@ Anomalies Detection (offline vs Streaming)
     * Offline trained model for online data - If your coming data do not have significant changes, then train your model with historical data offline, and apply this model on online data, but need to check your model quality periodically, to make sure it still works fine
     
   * Experiment 1 - Spark Streaming
-    * [Spark streaming k-means][8]
+    * [Spark streaming k-means example][8]
+    * [streaming k-means built-in methods][10]
 
 
 <b>TO BE CONTINUED...</b>
@@ -46,3 +48,5 @@ Anomalies Detection (offline vs Streaming)
 [6]:https://spark.apache.org/docs/2.1.0/streaming-programming-guide.html#overview
 [7]:https://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html
 [8]:http://spark.apache.org/docs/latest/mllib-clustering.html#streaming-k-means
+[9]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/anomalies_detection_data_sample.txt
+[10]:http://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.clustering.StreamingKMeans
