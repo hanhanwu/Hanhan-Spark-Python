@@ -85,7 +85,6 @@ def main():
     ad = AnomalyDetection()
     ad.readData(inputs)
     anomalies = ad.detect(8, 0.97)
-    print anomalies.count()
     anomalies.show()
 
 if __name__ == "__main__":
