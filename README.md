@@ -1,5 +1,5 @@
 # Hanhan-Spark-Python
-Spark Python code I have wrote
+Spark Python code I have wrote here was <b>using Spark1.5</b>, may not apply to later version all the time.
 
 * <b>To run Spark in different situations</b>, check SFU guidance: https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
 
