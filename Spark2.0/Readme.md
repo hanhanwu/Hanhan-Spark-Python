@@ -5,7 +5,8 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 INSTALL & RUN SPARK 2.0
 
 * If you want to install/run it in different situations, such as in your local machine, Hadoop VMs, Cluster, etc. Check [this SFU CS Big Data Guidance][1]
-* To add Spark in IDE (I'm using MAC)
+* <b>NOW! You finally can simply install Spark through pip!</b>, type `pip install pyspark` in your terminal. I tried, now I can use spark in my IPython much easier
+* <b>OR, An Old Method - To add Spark in PyCharm</b>
   1. I'm using [PyCharm][2], it is great
   2. [Download Spark][3], at the time I'm wrinting this guidance, I am using `spark-2.1.1-bin-hadoop2.7`
   3. Open your PyCharm, create a new project. Open PyCharm Preference, and find `Project Structure`. Click `Add Content Root`, and find the path to `[your spark download folder]/spark-2.1.1-bin-hadoop2.7/python/lib`, add `py4j-0.10.4-src.zip`, `pyspark.zip`. Then you should be able to use Spark in your PyCharm
