@@ -24,8 +24,11 @@ Anomalies Detection (offline vs Streaming)
 * Anomalies detection, OFFLINE (without streaming)
   * [Data Sample - parquet files][4]
   * [What does sample data look like][9], since you cannot read parquet directly
-  * [Spark 2.0 Anomalies Detection code][5]
+  * [Spark 2.0 Anomalies Detection code - With OO Design][5]
     * Compared with Spark1.5, one of the major changes is, `SqlContext` has been replaced with `SparkSession`, in the code we call it as `spark`. Meanwhile, `spark context` can be got from `spark.sparkContext`. If I didn't remember wrong, the reason they made this change is to make calling spark sql easier. You can simple use created `spark` to do many things that originally needed more libraries
+  * [Spark 2.0 Anomalies Detection - IPython][11] - more clear to see input and output
+    * [Same Data Input as above - parquet files][4]
+    * Uses k-means clustering, then clusters with less member counts (higher score, higher than a threshold) will be considered as anomalies
 
 * Anomalies detection, with streaming
   * When it comes to real time detection experiments, I am planning to try 3 methods
@@ -51,3 +54,4 @@ Anomalies Detection (offline vs Streaming)
 [8]:http://spark.apache.org/docs/latest/mllib-clustering.html#streaming-k-means
 [9]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/anomalies_detection_data_sample.txt
 [10]:http://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.clustering.StreamingKMeans
+[11]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/Saprk_anomalies_detction.ipynb
