@@ -37,6 +37,10 @@ Anomalies Detection (offline vs Streaming)
     * Offline trained model for online data - If your coming data do not have significant changes, then train your model with historical data offline, and apply this model on online data, but need to check your model quality periodically, to make sure it still works fine
     
   * Experiment 1 - Spark Streaming
+    * [How Spark Streaming K-Means Work][12]
+      * For each batch of data, it applies 2 steps of k-means
+        * Random initialize k centers
+        * Generate clusters, compute the average for each cluster and update the new centers
     * [Spark streaming k-means example][8]
     * [streaming k-means built-in methods][10]
 
@@ -55,3 +59,4 @@ Anomalies Detection (offline vs Streaming)
 [9]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/anomalies_detection_data_sample.txt
 [10]:http://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.clustering.StreamingKMeans
 [11]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/Saprk_anomalies_detction.ipynb
+[12]:https://databricks.com/blog/2015/01/28/introducing-streaming-k-means-in-spark-1-2.html
