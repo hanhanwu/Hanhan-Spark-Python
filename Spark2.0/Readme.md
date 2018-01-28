@@ -24,14 +24,14 @@ Anomalies Detection (offline vs Streaming)
 * Anomalies detection, OFFLINE (without streaming)
   * [Data Sample - parquet files][4]
   * [What does sample data look like][9], since you cannot read parquet directly
-  * [Spark 2.0 Anomalies Detection code - With OO Design][5]
+  * [My Code: Spark 2.0 Anomalies Detection code - With OO Design][5]
     * Compared with Spark1.5, one of the major changes is, `SqlContext` has been replaced with `SparkSession`, in the code we call it as `spark`. Meanwhile, `spark context` can be got from `spark.sparkContext`. If I didn't remember wrong, the reason they made this change is to make calling spark sql easier. You can simple use created `spark` to do many things that originally needed more libraries
-  * [Spark 2.0 Anomalies Detection - IPython][11] - more clear to see input and output
+  * [My Code: Spark 2.0 Anomalies Detection - IPython][11] - more clear to see input and output
     * [Same Data Input as above - parquet files][4]
     * Uses k-means clustering, then clusters with less member counts (higher score, higher than a threshold) will be considered as anomalies
 
 * Anomalies detection, with streaming
-  * When it comes to real time detection experiments, I am planning to try 3 methods
+  * When it comes to real time detection experiments, you can try these methods with Spark
     * [Spark Streaming][6] - Apply Spark streaming machine learning methods on streaming data
     * [Structured Streaming][7] - This one is still in Alpha Experimental stage, they are trying to allow you use streaming just like offline spark code
     * Offline trained model for online data - If your coming data do not have significant changes, then train your model with historical data offline, and apply this model on online data, but need to check your model quality periodically, to make sure it still works fine
@@ -44,6 +44,11 @@ Anomalies Detection (offline vs Streaming)
       * For each batch of data, it applies 2 steps of k-means
         * Random initialize k centers
         * Generate clusters, compute the average for each cluster and update the new centers
+      * [My Code: Spark streaming k-means][14]
+        * [Sample training data][15]
+        * [Sample testing data][16]
+        * With `predictOnValues`, you need label and features, and you need `LabelPoint(label, feature_vector)` to put them together, vector has to be `Vectors.dense(python_list)`
+        * With `predictOn`, you don't need the label, but just to have `Vectors.dense(python_list)` to put features together
     * [Spark streaming k-means example][8]
     * [streaming k-means built-in methods][10]
 
@@ -64,3 +69,6 @@ Anomalies Detection (offline vs Streaming)
 [11]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/Saprk_anomalies_detction.ipynb
 [12]:https://databricks.com/blog/2015/01/28/introducing-streaming-k-means-in-spark-1-2.html
 [13]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_streaming_word_count.ipynb
+[14]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_kmeans_streaming.ipynb
+[15]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/kmeans_train.csv
+[16]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/kmeans_test.csv
