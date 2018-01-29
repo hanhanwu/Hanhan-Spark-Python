@@ -49,11 +49,13 @@ Anomalies Detection (offline vs Streaming)
         * [Sample testing data][16]
         * With `predictOnValues`, you need label and features, and you need `LabelPoint(label, feature_vector)` to put them together, vector has to be `Vectors.dense(python_list)`
         * With `predictOn`, you don't need the label, but just to have `Vectors.dense(python_list)` to put features together
+        * dimension in `setRandomCeters()` means the number of features in a row
+      * [My Code: Spark Streaming Anomalies Detection][17]
+        * [Same Data Input as above Offline Anomalies Detection - parquet files][4]
+        * [What does sample data look like][9], since you cannot read parquet directly
     * [Spark streaming k-means example][8]
     * [streaming k-means built-in methods][10]
 
-
-<b>TO BE CONTINUED...</b>
 
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
@@ -72,3 +74,4 @@ Anomalies Detection (offline vs Streaming)
 [14]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_kmeans_streaming.ipynb
 [15]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/kmeans_train.csv
 [16]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/kmeans_test.csv
+[17]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_streaming_anomalies_detection.ipynb
