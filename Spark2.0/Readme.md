@@ -1,9 +1,8 @@
 I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should be easier to use and faster for big data operations. Here, I'm creating this new folder, recording my Spark 2.0 practicing experience
 
-**************************************************************************
+## INSTALL & RUN SPARK 2.0
 
-INSTALL & RUN SPARK 2.0
-
+### Solutions for local machine, cluster, Hadoop VMs
 * If you want to install/run it in different situations, such as in your local machine, Hadoop VMs, Cluster, etc. Check [this SFU CS Big Data Guidance][1]
 * <b>NOW! You finally can simply install Spark through pip!</b>, type `pip install pyspark` in your terminal. I tried, now I can use spark in my IPython much easier
 * <b>OR, An Old Method - To add Spark in PyCharm</b>
@@ -15,6 +14,7 @@ INSTALL & RUN SPARK 2.0
   * Type `export SPARK_HOME=[your spark download folder path]/spark-2.1.1-bin-hadoop2.7`
   * Type `${SPARK_HOME}/bin/spark-submit --master local [your python file].py [input file 1]`, input file is optional, all depends on how you are going to read the data input in your code. And you can set multiple input files
 
+### [Install Spark on Windows][18]
 
 **************************************************************************
 
@@ -75,3 +75,4 @@ Anomalies Detection (offline vs Streaming)
 [15]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/kmeans_train.csv
 [16]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/kmeans_test.csv
 [17]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_streaming_anomalies_detection.ipynb
+[18]:https://github.com/hanhanwu/Basic_But_Useful/blob/master/RA_command_lines.md#how-to-install-spark-on-windows
