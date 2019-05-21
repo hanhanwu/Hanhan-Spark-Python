@@ -16,10 +16,9 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 
 ### [Install Spark on Windows][18]
 
-**************************************************************************
-
-Anomalies Detection (offline vs Streaming)
-
+## Practice
+### [How to define `spark`][19]
+### Anomalies Detection (offline vs Streaming)
 * I'm planning to test Spark2.0 streaming, to see whether it can make real time data analysis, and hope to find a way to check model quality
 * Anomalies detection, OFFLINE (without streaming)
   * [Data Sample - parquet files][4]
@@ -76,3 +75,4 @@ Anomalies Detection (offline vs Streaming)
 [16]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/kmeans_test.csv
 [17]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_streaming_anomalies_detection.ipynb
 [18]:https://github.com/hanhanwu/Basic_But_Useful/blob/master/RA_command_lines.md#how-to-install-spark-on-windows
+[19]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/how_to_define_spark.py
