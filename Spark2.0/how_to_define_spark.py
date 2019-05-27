@@ -28,7 +28,7 @@ from pyspark.mllib.clustering import KMeans
 spark = SparkSession.builder \
         .master("local") \
         .appName("Anomalies Detection") \
-        .config("spark.some.config.option", "some-value") \
+        .config("spark.some.config.option", "some-value") \  # config properties: https://spark.apache.org/docs/latest/configuration.html#available-properties
         .getOrCreate()
 
 sparkCt = spark.sparkContext
