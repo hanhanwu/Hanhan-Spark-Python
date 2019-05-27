@@ -1,6 +1,7 @@
 I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should be easier to use and faster for big data operations. Here, I'm creating this new folder, recording my Spark 2.0 practicing experience
 
 ## INSTALL & RUN SPARK 2.0
+* [Configuration Properties][20]
 
 ### Solutions for local machine, cluster, Hadoop VMs
 * If you want to install/run it in different situations, such as in your local machine, Hadoop VMs, Cluster, etc. Check [this SFU CS Big Data Guidance][1]
@@ -76,3 +77,4 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [17]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_streaming_anomalies_detection.ipynb
 [18]:https://github.com/hanhanwu/Basic_But_Useful/blob/master/RA_command_lines.md#how-to-install-spark-on-windows
 [19]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/how_to_define_spark.py
+[20]:https://spark.apache.org/docs/latest/configuration.html#memory-management
