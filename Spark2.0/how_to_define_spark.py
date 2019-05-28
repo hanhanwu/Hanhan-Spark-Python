@@ -28,7 +28,18 @@ from pyspark.mllib.clustering import KMeans
 spark = SparkSession.builder \
         .master("local") \
         .appName("Anomalies Detection") \
-        .config("spark.some.config.option", "some-value") \  # config properties: https://spark.apache.org/docs/latest/configuration.html#available-properties
+        .config("spark.some.config.option", "some-value") \  
         .getOrCreate()
 
 sparkCt = spark.sparkContext
+
+# config properties: https://spark.apache.org/docs/latest/configuration.html#available-properties
+# For example: I had a giant file, and it reported errors related to GC (garbage collection), 
+## but in fact I just need to set driver size larger and cache() the large dataframe
+spark = SparkSession.builder.master("local")\
+       .appName("Try Association Rules")\
+       .config("spark.driver.memory", "4g")\
+       .getOrCreate()
+
+df = spark.createDataFrame(item_lst, ["id", "items"])
+df.cache()  # cache the giant dataframe will help
