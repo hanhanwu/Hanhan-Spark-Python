@@ -20,6 +20,7 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
   * Even if you have Spark in IDE, still need to run it through terminal. So, open your terminal
   * Type `export SPARK_HOME=[your spark download folder path]/spark-2.1.1-bin-hadoop2.7`
   * Type `${SPARK_HOME}/bin/spark-submit --master local [your python file].py [input file 1]`, input file is optional, all depends on how you are going to read the data input in your code. And you can set multiple input files
+* For more detailed configuration, check [pyspark for beginners][21]
 
 ### [Install Spark on Windows][18]
 
@@ -86,3 +87,4 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [18]:https://github.com/hanhanwu/Basic_But_Useful/blob/master/RA_command_lines.md#how-to-install-spark-on-windows
 [19]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/how_to_define_spark.py
 [20]:https://spark.apache.org/docs/latest/configuration.html#memory-management
+[21]:https://www.analyticsvidhya.com/blog/2019/10/pyspark-for-beginners-first-steps-big-data-analysis/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29
