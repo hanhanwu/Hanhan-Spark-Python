@@ -5,6 +5,13 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 ### Solutions for local machine, cluster, Hadoop VMs
 * If you want to install/run it in different situations, such as in your local machine, Hadoop VMs, Cluster, etc. Check [this SFU CS Big Data Guidance][1]
 * <b>NOW! You finally can simply install Spark through pip!</b>, type `pip install pyspark` in your terminal. I tried, now I can use spark in my IPython much easier
+  * Make sure that `JAVA_HOME` is pointing to JDK8, Spark cannot compile with JDK 9+
+    * Type `/usr/libexec/java_home -V` in the terminal, to find what JDK HOMES you have already installed
+  * Also download Spark
+  * Before running iPython, type:
+    * `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home`
+    * `export SPARK_HOME=/Users/hanhan.wu/Downloads/spark-2.4.4-bin-hadoop2.7/`
+    * `export PYSPARK_PYTHON=python3`
 * <b>OR, An Old Method - To add Spark in PyCharm</b>
   1. I'm using [PyCharm][2], it is great
   2. [Download Spark][3], at the time I'm wrinting this guidance, I am using `spark-2.1.1-bin-hadoop2.7`
