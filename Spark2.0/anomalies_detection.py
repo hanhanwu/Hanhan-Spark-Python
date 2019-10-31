@@ -67,7 +67,7 @@ class AnomalyDetection():
 
         # Clustering points using KMeans
         features = df1.select("features").rdd.map(lambda row: row[0]).cache()
-        model = KMeans.train(features, k, maxIterations=40, runs=10, initializationMode="random", seed=20)
+        model = KMeans.train(features, k, maxIterations=40, initializationMode="random", seed=20)
 
         # Adding the prediction column to df1
         modelBC = sparkCt.broadcast(model)
