@@ -65,7 +65,19 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
     * [Spark streaming k-means example][8]
     * [streaming k-means built-in methods][10]
 
-
+### Spark Streaming
+#### Terminology
+* Caching
+  * You can cach the data temporarily to avoid recompute. DStream allows you to keep the data in the memory.
+* Checkpointing
+  * If you don't have a large RAM, caching cannot work for large memory storage. "Checkpointing is another technique to keep the results of the transformed dataframes. It saves the state of the running application from time to time on any reliable storage like HDFS. However, it is slower and less flexible than caching."
+* Shared Variable - it's the variable copied into each machine, used by that machine but also helps the communication across machines. For example, "each cluster’s executor will calculate the results of the data present on that particular cluster. But we need something that helps these clusters communicate so we can get the aggregated result. In Spark, we have shared variables that allow us to overcome this issue."
+* Accumulator Variable
+  * The executor on each cluster sends data back to the driver process to update the values of the accumulator variables. 
+  * Accumulators are applicable only to the operations that are associative and commutative. For example, sum and maximum will work, whereas the mean will not.
+* Broadcast Variable
+  * Broadcast variables allow the programmer to keep a read-only variable cached on each machine. 
+  * Usually, Spark automatically distributes broadcast variables using efficient broadcast algorithms but we can also define them if we have tasks that require the same data for multiple stages.
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
 [2]:https://www.jetbrains.com/pycharm/download/#section=mac
