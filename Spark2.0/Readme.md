@@ -78,6 +78,20 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 * Broadcast Variable
   * Broadcast variables allow the programmer to keep a read-only variable cached on each machine. 
   * Usually, Spark automatically distributes broadcast variables using efficient broadcast algorithms but we can also define them if we have tasks that require the same data for multiple stages.
+  
+#### Available Spark MLLib Streaming Models
+* Benefits with Built-in Streaming Methods
+  * It seems that they don't need Netcat and can load text file as input themselves.
+  * They have `trainOn()`, `predictOn()` methods instead of using `fit` & `transform`
+* Classification
+  * [Streaming Linear Regression][22]
+* Clustering
+  * [Streaming Kmeans][23]
+
+#### How To Load Streaming Input
+* With Netcat
+  * `nc -lk [port number]` is how you turn on Netcat
+  * [Load manually input data][24] - Once you turned on Netcat in your terminal, just type whatever text in that terminal, spark streaming will process that.
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
 [2]:https://www.jetbrains.com/pycharm/download/#section=mac
@@ -100,3 +114,6 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [19]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/how_to_define_spark.py
 [20]:https://spark.apache.org/docs/latest/configuration.html#memory-management
 [21]:https://www.analyticsvidhya.com/blog/2019/10/pyspark-for-beginners-first-steps-big-data-analysis/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29
+[22]:https://spark.apache.org/docs/latest/mllib-linear-methods.html#streaming-linear-regression
+[23]:https://spark.apache.org/docs/latest/mllib-clustering.html#streaming-k-means
+[24]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/process_manually_input.ipynb
