@@ -83,6 +83,7 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 * Benefits with Built-in Streaming Methods
   * It seems that they don't need Netcat and can load text file as input themselves.
   * They have `trainOn()`, `predictOn()` methods instead of using `fit` & `transform`
+* The limitation is, Spark has limited streaming machine learning models available.
 * Classification
   * [Streaming Linear Regression][22]
 * Clustering
@@ -92,6 +93,8 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 * With Netcat
   * `nc -lk [port number]` is how you turn on Netcat
   * [Load manually input data][24] - Once you turned on Netcat in your terminal, just type whatever text in that terminal, spark streaming will process that.
+* With Cliet Streaming
+  * [How to use socket to listen to client's streaming and process it][25]
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
 [2]:https://www.jetbrains.com/pycharm/download/#section=mac
@@ -117,3 +120,4 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [22]:https://spark.apache.org/docs/latest/mllib-linear-methods.html#streaming-linear-regression
 [23]:https://spark.apache.org/docs/latest/mllib-clustering.html#streaming-k-means
 [24]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/process_manually_input.ipynb
+[25]:https://towardsdatascience.com/hands-on-big-data-streaming-apache-spark-at-scale-fd89c15fa6b0
