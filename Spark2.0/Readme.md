@@ -95,6 +95,11 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
   * [Load manually input data][24] - Once you turned on Netcat in your terminal, just type whatever text in that terminal, spark streaming will process that.
 * With Cliet Streaming
   * [How to use socket to listen to client's streaming and process it][25]
+  
+  
+## Current Spark Limitations
+* After running streaming, original RDD or dataframe will become None.
+* Spark dataframe is not iterable, you need to iterate rdd, `df.rdd.collect()` is iterable
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
 [2]:https://www.jetbrains.com/pycharm/download/#section=mac
