@@ -95,10 +95,13 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
   * [Load manually input data][24] - Once you turned on Netcat in your terminal, just type whatever text in that terminal, spark streaming will process that.
 * With Cliet Streaming
   * [How to use socket to listen to client's streaming and process it][25]
+* `ssc.awaitTermination` vs `ssc.stop`
+  * Using `ssc.stop`, the sleeping time decides when to stop the streaming. Too early you may not process all the data; too late, you will get empty output after processing all the data.
+  * Using `ssc.awaitTermination` will keep running until you terminate the program. Spark doesn't know when to stop the program even after all the data has been processed.
   
   
 ## Current Spark Limitations
-* After running streaming, original RDD or dataframe will become None.
+* After running streaming, original RDD or dataframe will become None. Also after spark context stopped after streaming, you need to re-create a spark context. So it's almost to run-run the code.
 * Spark dataframe is not iterable, you need to iterate rdd, `df.rdd.collect()` is iterable
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
