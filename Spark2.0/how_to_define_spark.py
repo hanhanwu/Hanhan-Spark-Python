@@ -5,7 +5,8 @@ from pyspark.context import SparkContext
 from pyspark.sql.session import SparkSession
 from pyspark.ml.fpm import FPGrowth
 
-sc = SparkContext('local')
+## without local n, you will need to restart the prpgram to run this piece of code
+sc = SparkContext('local[2]', appName='local')  # local n specifies n threads
 spark = SparkSession(sc)  # defined saprk
 
 df = spark.createDataFrame([
