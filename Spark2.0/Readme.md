@@ -104,6 +104,7 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
   * Using `ssc.awaitTermination` will keep running until you terminate the program. Spark doesn't know when to stop the program even after all the data has been processed.
   
 ## Current Spark Limitations
+* It's odd. Same SparkContext creation code, sometimes I can re-run in IPython multiple times, sometimes it will show me the error saying a duplicated Spark Context is running...
 * After running streaming, original RDD or dataframe will become None. Also after spark context stopped after streaming, you need to re-create a spark context. So it's almost to run-run the code.
 * Spark dataframe is not iterable, you need to iterate rdd, `df.rdd.collect()` is iterable
 
