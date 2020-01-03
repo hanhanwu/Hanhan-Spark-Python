@@ -65,6 +65,12 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
     * [Spark streaming k-means example][8]
     * [streaming k-means built-in methods][10]
 
+
+### Spark Machine Learning Pipeline
+* [My Code Example][26]
+* Notes: It's definitely more organized to use machine learning pipeline, but I don't like to use it for spark streaming, it often creates issues in schema, since you have to convert streaming rdd to dataframe before using the pipeline.
+
+
 ### Spark Streaming
 #### Terminology
 * Caching
@@ -133,3 +139,4 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [23]:https://spark.apache.org/docs/latest/mllib-clustering.html#streaming-k-means
 [24]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/simulate_streaming_input.ipynb
 [25]:https://towardsdatascience.com/hands-on-big-data-streaming-apache-spark-at-scale-fd89c15fa6b0
+[26]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_MLPipeline.ipynb
