@@ -68,7 +68,10 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 
 ### Spark Machine Learning Pipeline
 * [My Code Example][26]
-* Notes: It's definitely more organized to use machine learning pipeline, but I don't like to use it for spark streaming, it often creates issues in schema, since you have to convert streaming rdd to dataframe before using the pipeline.
+* Notes
+  * It's definitely more organized to use machine learning pipeline, but I don't like to use it for spark streaming, it often creates issues in schema, since you have to convert streaming rdd to dataframe before using the pipeline.
+  * In spark pipeline, you can use `transform()` function for all stages, but doesn't mean each stage supports `transform()` function. Although this makes pipeline better....
+    * For example, `Word2Vec` doesn't support `transform()` but it can be used in a pipeline which will use transform...
 
 
 ### Spark Streaming
@@ -113,6 +116,8 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 * It's odd. Same SparkContext creation code, sometimes I can re-run in IPython multiple times, sometimes it will show me the error saying a duplicated Spark Context is running...
 * After running streaming, original RDD or dataframe will become None. Also after spark context stopped after streaming, you need to re-create a spark context. So it's almost to run-run the code.
 * Spark dataframe is not iterable, you need to iterate rdd, `df.rdd.collect()` is iterable
+* Spark pipeline has to process dataframe, while streaming data is rdd
+* In spark pipeline, you can use `transform()` function for all stages, but doesn't mean each stage supports `transform()` function. Although this makes pipeline better....
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
 [2]:https://www.jetbrains.com/pycharm/download/#section=mac
