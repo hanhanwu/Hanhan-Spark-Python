@@ -97,6 +97,9 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
   * [Streaming Linear Regression][22]
 * Clustering
   * [Streaming Kmeans][23]
+  
+#### Spark Streaming without Built-in Models
+* [Twitter Sentiment Streaming][27]
 
 #### How To Load Streaming Input
 * With Netcat
@@ -148,3 +151,4 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [24]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/simulate_streaming_input.ipynb
 [25]:https://towardsdatascience.com/hands-on-big-data-streaming-apache-spark-at-scale-fd89c15fa6b0
 [26]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_MLPipeline.ipynb
+[27]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/streaming_twitter_sentiment.ipynb
