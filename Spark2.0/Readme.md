@@ -119,6 +119,8 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 * Spark pipeline has to process dataframe, while streaming data is rdd
 * In spark pipeline, you can use `transform()` function for all stages, but doesn't mean each stage supports `transform()` function. Although this makes pipeline better....
 * There is spark `ml` and `mllib`, they could have functions with the same name but support different methods, which tend to cause confusion. When I was using spark pipeline, need to use functions in `ml`, not sure why they could not combine these 2 as 1
+* I personally think, spark is not ready for advanced machine learning yet but more about a data enginerring tool at this moment. Because of its limited machine learninglibrary, and special data structure is not really comptable with other python machine learning libraries.
+
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
 [2]:https://www.jetbrains.com/pycharm/download/#section=mac
