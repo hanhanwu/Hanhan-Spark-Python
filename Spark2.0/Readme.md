@@ -124,6 +124,13 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 * There is spark `ml` and `mllib`, they could have functions with the same name but support different methods, which tend to cause confusion. When I was using spark pipeline, need to use functions in `ml`, not sure why they could not combine these 2 as 1
 * I personally think, spark is not ready for advanced machine learning yet but more about a data enginerring tool at this moment. Because of its limited machine learninglibrary, and special data structure is not really comptable with other python machine learning libraries.
 
+## Spark 2.* Basics
+### Saprk SQL
+* [This is a good starting point][28]
+  * Use spark dataframe to run spark sql
+  * Register temptable so that you can write spark SQL query
+  * Briefly mentioned why and how spark sql is efficient
+
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
 [2]:https://www.jetbrains.com/pycharm/download/#section=mac
@@ -152,3 +159,4 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [25]:https://towardsdatascience.com/hands-on-big-data-streaming-apache-spark-at-scale-fd89c15fa6b0
 [26]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_MLPipeline.ipynb
 [27]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/streaming_twitter_sentiment.ipynb
+[28]:https://www.analyticsvidhya.com/blog/2020/02/hands-on-tutorial-spark-sql-analyze-data/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29
