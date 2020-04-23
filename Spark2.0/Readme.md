@@ -130,6 +130,9 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
   * Use spark dataframe to run spark sql
   * Register temptable so that you can write spark SQL query
   * Briefly mentioned why and how spark sql is efficient
+  
+## Spark & Other Libraries
+* [Histograms and Density Plots Visualization with Spark DataFrame][29]
 
 
 [1]:https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
@@ -160,3 +163,4 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [26]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/spark_MLPipeline.ipynb
 [27]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/streaming_twitter_sentiment.ipynb
 [28]:https://www.analyticsvidhya.com/blog/2020/02/hands-on-tutorial-spark-sql-analyze-data/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29
+[29]:https://github.com/Bergvca/pyspark_dist_explore
