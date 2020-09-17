@@ -43,3 +43,13 @@ spark = SparkSession.builder.master("local")\
 
 df = spark.createDataFrame(item_lst, ["id", "items"])
 df.cache()  # cache the giant dataframe will help
+
+
+## If you are using SageMaker Notebook, spark session is ready as spark
+from pyspark.sql import DataFrame, SparkSession
+from pyspark.context import SparkContext
+
+df = spark.read.csv("[S3 path]",
+        header=True,
+        inferSchema=True,
+        sep="|")
