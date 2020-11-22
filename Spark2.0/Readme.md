@@ -23,6 +23,7 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 * For more detailed configuration, check [pyspark for beginners][21]
 
 ### [Install Spark on Windows][18]
+### [Install Spark on Colab][30]
 
 ## Practice
 ### [How to define `spark`][19]
@@ -164,3 +165,4 @@ I was using Spark 1.5. Now Spark 2.0 has make many changes and in fact it should
 [27]:https://github.com/hanhanwu/Hanhan-Spark-Python/blob/master/Spark2.0/streaming_twitter_sentiment.ipynb
 [28]:https://www.analyticsvidhya.com/blog/2020/02/hands-on-tutorial-spark-sql-analyze-data/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+AnalyticsVidhya+%28Analytics+Vidhya%29
 [29]:https://github.com/Bergvca/pyspark_dist_explore
+[30]:https://github.com/hanhanwu/Hanhan_COLAB_Experiemnts/blob/master/spark_colab.ipynb
