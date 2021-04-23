@@ -1,4 +1,7 @@
 # Hanhan-Spark-Python
+
+* [Spark book for beginners][1]
+
 Spark Python code I have wrote here was <b>using Spark1.5</b>, may not apply to later version all the time.
 
 * <b>To run Spark in different situations</b>, check SFU guidance: https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
@@ -264,3 +267,4 @@ Deep Learning
   * visualize neural network models in each deep learning layer.
 
 
+[1]:https://github.com/ashishpatel26/Data-Science-Tutorial-By-Lambda-School/blob/master/11-Big-Data/Spark%20-%20The%20Definitive%20Guide%20-%20Big%20data%20processing%20made%20simple.pdf
