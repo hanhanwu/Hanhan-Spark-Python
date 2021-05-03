@@ -1,12 +1,20 @@
 # Hanhan-Spark-Python
 
-* [Spark book for beginners][1]
-
 Spark Python code I have wrote here was <b>using Spark1.5</b>, may not apply to later version all the time.
 
+## Resources
+* [Spark book for beginners][1]
+
+## Setup
 * <b>To run Spark in different situations</b>, check SFU guidance: https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
+  * In 2021 I found to export java_home in this way works: https://stackoverflow.com/questions/6588390/where-is-java-home-on-macos-mojave-10-14-to-lion-10-7 
 
+## Databrciks
+* [driver node][2] vs [worker node (executor)][3]
+  * worker is responsible for all the workload distribution, distributed processing
+  * driver is mainly to maintain SparkContext, interpreting notebook commands and coordinating with the workers
 
+## My Practice
 wordcount-improved.py and reddit-averages.py
 
 These 2 files are doing the same works like WordCountImproved.java, RedditAverages.java in my Hadoop-MapReduce folder, but instead of using java MapReduce, it's using Spark core python to do MapReduce works
@@ -268,3 +276,5 @@ Deep Learning
 
 
 [1]:https://github.com/ashishpatel26/Data-Science-Tutorial-By-Lambda-School/blob/master/11-Big-Data/Spark%20-%20The%20Definitive%20Guide%20-%20Big%20data%20processing%20made%20simple.pdf
+[2]:https://docs.databricks.com/clusters/configure.html#driver-node
+[3]:https://docs.databricks.com/clusters/configure.html#worker-node
