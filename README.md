@@ -6,7 +6,6 @@ Spark Python code I have wrote here was <b>using Spark1.5</b>, may not apply to 
 * [Spark book for beginners][1]
 * [Spark performance tuning tips][4]
 * [Solutions to solve mysterious spark errors][5]
-  * Solution of Problem 1, besides using `toDF()`, you can just use `alias()` to give the dataframe a new name, which is another way to clone the spark dataframe
 
 ## Setup
 * <b>To run Spark in different situations</b>, check SFU guidance: https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
