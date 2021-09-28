@@ -5,6 +5,7 @@ Spark Python code I have wrote here was <b>using Spark1.5</b>, may not apply to 
 ## Resources
 * [Spark book for beginners][1]
 * [Spark performance tuning tips][4]
+* [Solutions to solve mysterious spark errors][5]
 
 ## Setup
 * <b>To run Spark in different situations</b>, check SFU guidance: https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
@@ -280,3 +281,4 @@ Deep Learning
 [2]:https://docs.databricks.com/clusters/configure.html#driver-node
 [3]:https://docs.databricks.com/clusters/configure.html#worker-node
 [4]:https://sparkbyexamples.com/spark/spark-performance-tuning/
+[5]:https://medium.com/@yhoso/resolving-weird-spark-errors-f34324943e1c
