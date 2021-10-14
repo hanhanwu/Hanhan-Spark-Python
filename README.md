@@ -9,7 +9,9 @@ Spark Python code I have wrote here was <b>using Spark1.5</b>, may not apply to 
 
 ## Setup
 * <b>To run Spark in different situations</b>, check SFU guidance: https://courses.cs.sfu.ca/2016fa-cmpt-732-g5/pages/RunningSpark
-  * In 2021 I found to export java_home in this way works: https://stackoverflow.com/questions/6588390/where-is-java-home-on-macos-mojave-10-14-to-lion-10-7 
+  * `JAVA_HOME` doesn't need to be the same
+    * Option 1 - In 2021 I found to export java_home in this way works: https://stackoverflow.com/questions/6588390/where-is-java-home-on-macos-mojave-10-14-to-lion-10-7 
+    * Option 2: If you are using mac, `export JAVA_HOME=$(/usr/libexec/java_home)` will work too
 
 ## Databrciks
 * [driver node][2] vs [worker node (executor)][3]
