@@ -5,6 +5,7 @@ Spark Python code I have wrote here was <b>using Spark1.5</b>, may not apply to 
 ## Resources
 * [Spark book for beginners][1]
 * [Spark performance tuning tips][4]
+  * Coalesce ve Repartition: https://stackoverflow.com/questions/31610971/spark-repartition-vs-coalesce 
 * [Solutions to solve mysterious spark errors][5]
 
 ## Setup
